@@ -49,4 +49,14 @@
     <servlet-name>loginForm</servlet-name>
     <url-pattern>/loginForm</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>delete</display-name>
+    <servlet-name>delete</servlet-name>
+    <servlet-class>delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

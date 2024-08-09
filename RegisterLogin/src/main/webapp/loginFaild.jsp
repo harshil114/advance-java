@@ -7,6 +7,6 @@
 <title>Login Fail</title>
 </head>
 <body>
-<h1>Try again!</h1>
+<h1>Invalid Login!</h1>
 </body>
 </html>

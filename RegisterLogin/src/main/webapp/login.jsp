@@ -13,7 +13,7 @@
 		<input type="submit" value="Submit"><br> <br>
 		
 		<a href="register.jsp">New User? Register here</a> <br><br>
-		<a href="home.jsp">Home</a>
+		<a href="delete.jsp">Delete Account?</a>
 	</form>
 
 </body>
