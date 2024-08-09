@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Registration Faild</title>
+<title>Login Fail</title>
 </head>
 <body>
-<h1>Registration fail</h1>
-<a href="register.jsp">Register again!</a>
+<h1>Try again!</h1>
 </body>
 </html>

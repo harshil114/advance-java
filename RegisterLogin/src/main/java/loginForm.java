@@ -1,5 +1,7 @@
 
 
+import jakarta.security.auth.message.callback.PrivateKeyCallback.Request;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,17 +12,18 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
- * Servlet implementation class regForm2
+ * 
  */
-public class regForm2 extends HttpServlet {
+public class loginForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public regForm2() {
+    public loginForm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,12 +41,10 @@ public class regForm2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		PrintWriter out = response.getWriter();
-		String myname = request.getParameter("name1");
-		String myemail = request.getParameter("email1");
-		String mypass = request.getParameter("pass1");
-		String mygender = request.getParameter("gender1");
-		String mycity = request.getParameter("city1");
+//		PrintWriter out = response.getWriter();
+		
+		String myemail  =request.getParameter("email1");
+		String mypassword = request.getParameter("pass1");
 		
 		
 		try 
@@ -51,33 +52,30 @@ public class regForm2 extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/register","root","1143");
 			
-			PreparedStatement ps = con.prepareStatement("insert into register values(?,?,?,?,?)");	
+			PreparedStatement ps = con.prepareStatement("select * from register where email=? and password=?");
+			ps.setString(1, myemail);
+			ps.setString(2, mypassword);
 			
-			ps.setString(1, myname);
-			ps.setString(2,myemail);
-			ps.setString(3, mypass);
-			ps.setString(4, mygender);
-			ps.setString(5,mycity);
+			ResultSet rs = ps.executeQuery();
 			
-			int count = ps.executeUpdate();
-			
-			if(count>0)
+			if(rs.next())
 			{
-//				out.print("Register Successfully");
-				response.sendRedirect("regSuccess.jsp");
-			}
-			else 
-			{
-//				out.print("Not Register");
-				response.sendRedirect("regFaild.jsp");
-				
-			}
+				response.sendRedirect("loginSuccess.jsp");
 
+			}
+			else
+			{
+				response.sendRedirect("loginFaild.jsp");
+			}
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
+			
 		}
+		
+		
+		
 		
 		
 		

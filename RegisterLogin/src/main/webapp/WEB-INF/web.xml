@@ -39,4 +39,14 @@
     <servlet-name>regForm2</servlet-name>
     <url-pattern>/regForm2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>loginForm</display-name>
+    <servlet-name>loginForm</servlet-name>
+    <servlet-class>loginForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginForm</servlet-name>
+    <url-pattern>/loginForm</url-pattern>
+  </servlet-mapping>
 </web-app>

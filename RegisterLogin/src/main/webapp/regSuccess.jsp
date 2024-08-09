@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Register Success</h1>
+<a href="login.jsp">Login here</a>
 </body>
 </html>

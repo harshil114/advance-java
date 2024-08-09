@@ -20,7 +20,10 @@
 				<option>Banglore</option>
 			</select> <br/><br/>
 		
-		<input type="submit" value="Register"/>
+		<input type="submit" value="Register"/> <br> <br>
+		
+		<a href="login.jsp">Already user? Login here</a> <br><br>
+		<a href="home.jsp">Home</a>
 	
 	</form>
 
